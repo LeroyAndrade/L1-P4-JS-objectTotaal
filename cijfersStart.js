@@ -22,45 +22,24 @@ document.write(cijfer1.Cijfer);
 
 // OPDRACHT 2.
 // Maak verschillende variabelen voor je opdrachten.
+
     // Minimaal 3 opdrachten voor 3 verschillende vakken.
-    // Totaal dus 9 opdrachten
-// Kijk in week6 of studie.js hoe je een variabele aanmaakt met het keyword new
+        // Totaal dus 9 opdrachten
+        // Maak voor al deze opdrachten een cijfer variabele aan
 
-// Maak voor al deze opdrachten een cijfer variabele aan
+    let obj0 = new Opdracht('FRO',  'Opdracht1.0');
+    let obj1 = new Opdracht('FRO',  'Opdracht1.1');
+    let obj2 = new Opdracht('PR',   'Opdracht1.2');
+    let obj3 = new Opdracht('SLB',  'Opdracht1.3');
+    let obj4 = new Opdracht('BAP',  'Opdracht1.4');
+    let obj5 = new Opdracht('NED',  'Opdracht1.5');
+    let obj6 = new Opdracht('CMS',  'Opdracht1.6');
+    let obj7 = new Opdracht('K-ID', 'Opdracht1.7');
+    let obj8 = new Opdracht('ENG',  'Opdracht1.8');
+    let obj9 = new Opdracht('PRO',  'Opdracht1.9');
+        //bovenstaande maal drie = 9 let variabelen
+
 // Kijk in week6 hoe je een variabele aanmaakt met het keyword new
-function opdrachtObj(vak,opdracht, mening) {
-let opdrachtOb = this;
-//variabele1
-opdrachtOb.Vak = vak;
-//variabele2
-opdrachtOb.Opdracht = opdracht;
-//variabele3
-opdrachtOb.Mening = mening;
-}
-let letObj1 = new opdrachtObj('FRO', 'Object week 8', 'Leerzaam');
-let letObj2 = new opdrachtObj('CMS', 'CMS week 8', 'Leerzaam');
-let letObj3 = new opdrachtObj('SLB', 'Zelfreflectie', 'Leerzaam');
-document.write('<br/>'+letObj1.Vak);
-
-let forInOpdracht2="";
-for (const property in letObj1) {
-forInOpdracht2+=(`${property}: ${letObj1[property]}`+'<br/>');
-}document.write('<br/>'+'<br/>'+"Opgave 5 OOP" +'<br/>'+ forInOpdracht2);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // OPDRACHT 3.
 // Vul de arrays met de opdrachten en cijfers die je hebt aangemaakt.

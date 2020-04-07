@@ -28,15 +28,39 @@ document.write(cijfer1.Cijfer);
 
 // Maak voor al deze opdrachten een cijfer variabele aan
 // Kijk in week6 hoe je een variabele aanmaakt met het keyword new
-function opdracht2Obj(Vak,opdracht) {
+function opdrachtObj(vak,opdracht, mening) {
 let opdrachtOb = this;
 //variabele1
 opdrachtOb.Vak = vak;
 //variabele2
 opdrachtOb.Opdracht = opdracht;
 //variabele3
+opdrachtOb.Mening = mening;
 }
-let opdrachtOb = new Opdracht('FRO', 'gallerij');
+let letObj1 = new opdrachtObj('FRO', 'Object week 8', 'Leerzaam');
+let letObj2 = new opdrachtObj('CMS', 'CMS week 8', 'Leerzaam');
+let letObj3 = new opdrachtObj('SLB', 'Zelfreflectie', 'Leerzaam');
+document.write('<br/>'+letObj1.Vak);
+
+let forInOpdracht2="";
+for (const property in letObj1) {
+forInOpdracht2+=(`${property}: ${letObj1[property]}`+'<br/>');
+}document.write('<br/>'+'<br/>'+"Opgave 5 OOP" +'<br/>'+ forInOpdracht2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // OPDRACHT 3.
 // Vul de arrays met de opdrachten en cijfers die je hebt aangemaakt.

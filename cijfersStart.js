@@ -17,14 +17,13 @@ let cijferOb = this;
 cijferOb.Opdracht = opdracht;
 cijferOb.Cijfer = cijfer;
 for(i=0; i< 11; i++){
-  if (cijfer !== i)
-  {
-  cijferOb.Cijfer += "Geen waarde ingevuld, u krijgt een willekeurig getal ", cijferOb.Cijfer =Math.floor(Math.random()*10)+1;
-  } else {
-          cijferOb.Cijfer = cijfer;
-         }
-  }
-  }
+    if (cijfer !== i){
+      cijferOb.Cijfer = "Geen waarde ingevuld, u krijgt een willekeurig getal " + (Math.floor(Math.random()*10)+1);
+   }else{
+      cijferOb.Cijfer = cijfer;
+       }
+    }
+}
 let cijfer1 = new cijferObj("OBJ");
 //let cijfer1 = new cijferObj("OBJ",10);
 document.write(cijfer1.Cijfer);

@@ -25,7 +25,7 @@ for(i=0; i<= 10; i++){
     }
 }
 let cijferOpgv = new cijferObj("OBJ");
-//let cijfer1 = new cijferObj("OBJ",10);
+//let cijferOpgv = new cijferObj("OBJ",10);
 document.write(cijferOpgv.Cijfer);
 
 // OPDRACHT 2.
@@ -108,39 +108,30 @@ function storageAvailable(type) {
             (storage && storage.length !== 0);
     }
 }
-//Opdracht 5 BEGIN
+//Opdracht 5.1 BEGIN
 // Schrijf de periode variabele naar een JSON variabele
 // Kijk in week7 hoe je een JSON variabele aanmaakt
 function createJSON(){
-let verwijzing = document.querySelector("#json");
-let json = document.createElement('a');
-json.id="jsona";
-
-//JSON
-/*let applicationData = "Content-type; application/json;charset=utf-8" + "encodeURIComponent(JSON.stringify(obj))";
-let applicationData = "Content-type; application/json;charset=utf-8" + encodeURIComponent(JSON.stringify(obj));
-json.href += 'readme.md','data:' + applicationData;
-*/json.href="readme.md";
-json.download="json.json";
-json.dataset.info='datasetInfo';
-
-
-
-verwijzing.appendChild(json);
-let abc = document.createTextNode("Download");
-
 //LocalStorage
 if (storageAvailable('localStorage')) {
   // localStorage OK
-  var obj = { name: "Pietje Puk", age: 30, city: "Nederland" };
 
-  // Put the object into storage
-  localStorage.setItem('testObject', JSON.stringify(obj));
+  let myObj =periodeLet;
 
+  //Stringify converts naar string
+  let myJSONOBJ = JSON.stringify(myObj);
+
+
+// OPDRACHT 6.
+// Schrijf de JSON variabele naar de localStorage
+  // Plaays object in storage
+  localStorage.setItem("myObj", myJSONOBJ);
+
+//EXTRA eigen input: toon item vanuit storage;
   // Retrieve the object from storage
-  var retrievedObject = localStorage.getItem('testObject');
-
-  console.log('retrievedObject: ', JSON.parse(retrievedObject));
+  let retrievedObject = JSON.parse(localStorage.getItem("myObj"));
+  document.write('<br/>'+"Naam is "+retrievedObject.opdrachten+" en student cijfer is "+periodeLet.cijfers);
+//  console.log("retrievedObject: ", JSON.parse(retrievedObject));
 }
 else {
   // localStorage NOK
@@ -151,7 +142,3 @@ window.body.appendChild(json);
 }
 
 createJSON();
-
-// OPDRACHT 6.
-// Schrijf de json variabele naar de localStorage
-// Kijk in week week 6 hoe je een variabele naar de localStorage wegschrijft

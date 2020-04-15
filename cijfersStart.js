@@ -1,128 +1,98 @@
-function Opdracht(vak, beschrijving) {
+function opdracht(vak, beschrijving) {
     let opdrObj = this;
 
     opdrObj.vak = vak;
     opdrObj.beschrijving = beschrijving;
 }
-// OPDRACHT 1.
-// Maak de Cijfer functie af.
+// opdracht 1.
+// Maak de cijfer functie af.
 
 // opdracht is een object die met behulp van de bovenstaande
 // functie is aangemaakt.
 
-// Cijfer een nummer van 0 tot 10
+// cijfer een nummer van 0 tot 10
 
-function cijferObj(opdracht, cijfer) {
+function CijferObj(opdracht, cijfer) {
 let cijferOb = this;
-cijferOb.Opdracht = opdracht;
-cijferOb.Cijfer = cijfer;
-for(i=0; i<= 10; i++){
-    if (cijfer !== i){
-     cijferOb.Cijfer = "Geen juiste waarde ingevuld, u krijgt een willekeurig getal toegewezen " + (Math.floor(Math.random()*10)+1);
-   }else{
-      cijferOb.Cijfer = cijfer;
-       }
+cijferOb.opdracht = opdracht;
+cijferOb.cijfer = cijfer;
+   if (cijfer >=11){
+     cijferOb.cijfer = "Geen juiste waarde ingevuld, u krijgt een willekeurig getal toegewezen " + (Math.floor(Math.random()*10)+1);
+    }
+   else{
+     cijferOb.cijfer = cijfer;
     }
 }
-let cijferOpgv = new cijferObj("OBJ");
-//let cijferOpgv = new cijferObj("OBJ",10);
-document.write(cijferOpgv.Cijfer);
+//let cijferOpgv = new CijferObj("OBJ");
+let cijferOpgv = new CijferObj("Object opdracht 1, cijfer is een ",10);
+document.write(cijferOpgv.opdracht + cijferOpgv.cijfer + '<br/>');
 
-// OPDRACHT 2.
+// opdracht 2.
 // Maak verschillende variabelen voor je opdrachten.
 
     // Minimaal 3 opdrachten voor 3 verschillende vakken.
         // Totaal dus 9 opdrachten
 
 
-    let op0 = new Opdracht('FRO',  'Opdracht1.0');
-    let op1 = new Opdracht('FRO',  'Opdracht1.1');
-    let op2 = new Opdracht('FRO',  'Opdracht1.2');
-    let op3 = new Opdracht('SLB',  'Opdracht1.3');
-    let op4 = new Opdracht('SLB',  'Opdracht1.4');
-    let op5 = new Opdracht('SLB',  'Opdracht1.5');
-    let op6 = new Opdracht('CMS',  'Opdracht1.6');
-    let op7 = new Opdracht('CMS',  'Opdracht1.7');
-    let op8 = new Opdracht('CMS',  'Opdracht1.8');
+    let op0 = new opdracht('FRO',  'opdracht1.0');
+    let op1 = new opdracht('FRO',  'opdracht1.1');
+    let op2 = new opdracht('FRO',  'opdracht1.2');
+    let op3 = new opdracht('SLB',  'opdracht1.3');
+    let op4 = new opdracht('SLB',  'opdracht1.4');
+    let op5 = new opdracht('SLB',  'opdracht1.5');
+    let op6 = new opdracht('CMS',  'opdracht1.6');
+    let op7 = new opdracht('CMS',  'opdracht1.7');
+    let op8 = new opdracht('CMS',  'opdracht1.8');
 
 //cijfer variabele
   // Maak voor al deze opdrachten een cijfer variabele aan
   // Kijk in week6 hoe je een variabele aanmaakt met het keyword new
 
 //Manier 0
-let c0 = new cijferObj(op0.beschrijving,op0.vak);
-let c1 = new cijferObj(op1.beschrijving,op1.vak);
-let c2 = new cijferObj(op2.beschrijving,op2.vak);
-let c3 = new cijferObj(op3.beschrijving,op3.vak);
-let c4 = new cijferObj(op4.beschrijving,op4.vak);
-let c5 = new cijferObj(op5.beschrijving,op5.vak);
-let c6 = new cijferObj(op6.beschrijving,op6.vak);
-let c7 = new cijferObj(op7.beschrijving,op7.vak);
-let c8 = new cijferObj(op8.beschrijving,op8.vak);
+let c0 = new CijferObj(op0.beschrijving,op0.cijfer);
+let c1 = new CijferObj(op1.beschrijving,op1.cijfer);
+let c2 = new CijferObj(op2.beschrijving,op2.cijfer);
+let c3 = new CijferObj(op3.beschrijving,op3.cijfer);
+let c4 = new CijferObj(op4.beschrijving,op4.cijfer);
+let c5 = new CijferObj(op5.beschrijving,op5.cijfer);
+let c6 = new CijferObj(op6.beschrijving,op6.cijfer);
+let c7 = new CijferObj(op7.beschrijving,op7.cijfer);
+let c8 = new CijferObj(op8.beschrijving,op8.cijfer);
 
 //Manier 1
 
-// OPDRACHT 3.
+// opdracht 3.
 // Vul de arrays met de opdrachten en cijfers die je hebt aangemaakt.
 // Kijk in week6 voor een voorbeeld hoe je objecten in een array stopt!
 
 let opdrachten = [c0,c1,c2,c3,c4,c5,c6,c7,c8];
 
 function Periode (opdrachten, cijfers) {
-    let periodeObj = this;
+    let PeriodeObj = this;
 
-    periodeObj.opdrachten = opdrachten;
-    periodeObj.cijfers = cijfers;
+    PeriodeObj.opdrachten = opdrachten;
+    PeriodeObj.cijfers = cijfers;
 }
-// OPDRACHT 4.
+// opdracht 4.
 // Maak een periode variabele op basis van de bovenstaande functie
 
 //let periodeLet = new Periode(); = undefined
 let periodeLet = new Periode("Objecten", 10);
-console.table(periodeLet);
+console.table(PeriodeObj.opdrachten, PeriodeObj.cijfers);
 
-// OPDRACHT 5.
+// opdracht 5.
 
-//Bekijk of Localstore opgeroepen kan worden:
-function storageAvailable(type) {
-    var storage;
-    try {
-        storage = window[type];
-        var x = '__storage_test__';
-        storage.setItem(x, x);
-        storage.removeItem(x);
-        return true;
-    }
-    catch(e) {
-        return e instanceof DOMException && (
-            // everything except Firefox
-            e.code === 22 ||
-            // Firefox
-            e.code === 1014 ||
-            // test name field too, because code might not be present
-            // everything except Firefox
-            e.name === 'QuotaExceededError' ||
-            // Firefox
-            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-            // acknowledge QuotaExceededError only if there's something already stored
-            (storage && storage.length !== 0);
-    }
-}
-//Opdracht 5.1 BEGIN
+//opdracht 5.1 BEGIN
 // Schrijf de periode variabele naar een JSON variabele
 // Kijk in week7 hoe je een JSON variabele aanmaakt
 function createJSON(){
-//LocalStorage
-if (storageAvailable('localStorage')) {
-  // localStorage OK
-
   let myObj =periodeLet;
 
   //Stringify converts naar string
   let myJSONOBJ = JSON.stringify(myObj);
 
 
-// OPDRACHT 6.
+// opdracht 6.
 // Schrijf de JSON variabele naar de localStorage
   // Plaays object in storage
   localStorage.setItem("myObj", myJSONOBJ);
@@ -132,10 +102,6 @@ if (storageAvailable('localStorage')) {
   let retrievedObject = JSON.parse(localStorage.getItem("myObj"));
   document.write('<br/>'+"Naam is "+retrievedObject.opdrachten+" en student cijfer is "+periodeLet.cijfers);
 //  console.log("retrievedObject: ", JSON.parse(retrievedObject));
-}
-else {
-  // localStorage NOK
-}
 
 json.appendChild(abc);
 window.body.appendChild(json);
